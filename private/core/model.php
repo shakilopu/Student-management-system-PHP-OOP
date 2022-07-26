@@ -18,7 +18,8 @@ class Model extends Database
 
 	public function where($column, $value)
 	{
-		$column = addcslashes($column);
+		$column = addcslashes($column ,"");
+
 		$query = "select * from $this->table where $column  = :value";
 		return $this->query($query, [
 			'value' => $value
